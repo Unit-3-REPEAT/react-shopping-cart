@@ -6,8 +6,8 @@ import Product from './Product';
 
 const Products = props => {
 	const {products, addItem} = useContext(ProductContext);
-	console.log(`products inside Product -->`, products);
-	console.log(`addItem inside Product -->`, addItem);
+	// console.log(`products inside Product -->`, products);
+    // console.log(`addItem inside Product -->`, addItem);
 
 
 	return (
