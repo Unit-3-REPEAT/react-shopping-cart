@@ -17,16 +17,30 @@ function App() {
 
 	const addItem = item => {
 		// add the given item to the cart
-		setCart([...cart,item])
+		setCart([...cart, item])
 	};
+
+
+	const removeItem = (cartItem) => {
+		// console.log(`removeItem function TRIGGERED`)
+		setCart(cart.filter((item) => {
+			// console.log(`ITEM -->`, item);
+			if(cartItem.id !== item.id){
+				return true;
+			} else return false;
+			
+			
+			//This can be written as 
+			// return cartItem.id === item.id ? false : true;
+		}))
+	}
 
 	return (
 		<div className="App">	
-		<ProductContext.Provider value={{products, addItem}}>
-			<CartContext.Provider value={{cart}}>
+		<ProductContext.Provider value={{cart, products, addItem}}>
+			<CartContext.Provider value={{cart, removeItem}}>
 
-
-			<Navigation cart={cart} />
+			<Navigation cart={cart}/>
 			{/* Routes */}
 			<Route exact path="/">							
 					<Products />				

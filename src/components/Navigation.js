@@ -4,6 +4,7 @@ import {CartContext} from '../contexts/CartContext';
 
 const Navigation = props => {
 	const {cart} = useContext(CartContext);
+	// 
 
 	return (
 		<div className="navigation">
